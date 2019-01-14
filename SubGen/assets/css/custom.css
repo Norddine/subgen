@@ -1,0 +1,38 @@
+body {
+	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 20px;
+	color:#32325D;
+}
+
+body, td {
+	font: 14px "Asap", Verdana, Arial, Helvetica, sans-serif;
+
+	}
+
+.bouton{
+ color:#32325D;
+ border-width:0.6px;
+ border-style:solid;
+ border-color:grey;
+ padding:7px;
+ border-radius:20px;
+ font-weight:bold;
+ font-size:10px;
+}
+
+.label-file {
+    cursor: pointer;
+    color: #00b1ca;
+    font-weight: bold;
+}
+.label-file:hover {
+    color: #25a5c4;
+}
+
+.input-file {
+    display: none;
+}
+
+#txt{
+	background-color:#30343F;
+	color:#B4B4C4;
+}

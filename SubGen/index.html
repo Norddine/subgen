@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
+
     <head>
-        <meta charset="utf-8">
+    	<meta charset="utf-8">
         <meta https-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>SubGen</title>
@@ -16,64 +17,73 @@
 
     <body>
 
-        <div class="page" style="width:100%;overflow:hidden;"><br>
+    	<div class="page" style="width:100%; overflow:hidden;"><br>
 
-            <div class="grid-x grid-padding-x" style="height: 80px;">
-                <div class="cell medium-8 large-4">
-                    <a href="https://www.qwant.com/" class="bouton"><img src="images/Q.png" style="width:15px;"> QWANT</a> <a href="https://www.qwant.com/music" class="bouton"><img src="images/music-player.png" style="width:15px;"> MUSIC</a>
-                </div>
+    	<div class="grid-x grid-padding-x" style="height: 80px;">
+  			<div class="cell medium-8 large-4">
+    			<a href="https://www.qwant.com/" class="bouton"><img src="images/Q.png" style="width:15px;"> QWANT</a> <a href="https://www.qwant.com/music" class="bouton"><img src="images/music-player.png" style="width:15px;"> MUSIC</a>
+    		</div>
 
-            </div>
+    	</div>
 
-            <div class="grid-x grid-margin-x" style="height: 200px;">
+    	<div class="grid-x grid-margin-x" style="height: 200px;">
 
-                <div class="cell small-4"></div>
+  			<div class="cell small-4"></div>
 
-                <div class="cell small-4"><center><img src="images/Logo.png"></center></div>
+  			<div class="cell small-4"><center><img src="images/Logo.png"></center></div>
 
-                <div class="cell small-4"></div>
+  			<div class="cell small-4"></div>
 
-            </div>
+		</div>
 
-            <div class="grid-x" style="padding-top:20px">
+		<div class="grid-x" style="padding-top:20px">
 
-                <div class="cell small-3"></div>
+			<div class="cell small-3"></div>
 
-                <div class="cell small-2">
-                    <div class="formURL">
-                        <input type="text" id="URL" placeholder="Entrez votre URL" style="width:225px;float: right;">
-                    </div>
-                </div>
+  			<div class="cell small-2">
+  				<div class="formURL">
+  					<input type="text" id="URL" placeholder="Entrez votre URL" style="width:225px;float: right; border-radius:30px; height:50px;">
+  				</div>
+  			</div>
 
-                <div class="cell small-2"></div>
+  			<div class="cell small-2"></div>
 
-                <div class="cell small-2">
-                    <div class="formMP3">
-                        <label for="file" class="success button" style="width: 225px;">Choisir un fichier MP3</label>
-                        <input id="file" class="input-file" type="file" accept=".mp3">
-                    </div>
-                </div>
+  			<div class="cell small-2">
+  				<div class="formMP3">
+  					<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
+					<label for="file" class="success button" style="width: 225px; font-size:17px; height:50px;">Choose a file</label>
+				</div>
+  			</div>
 
-                <div class="cell small-3"></div>
+  			<div class="cell small-3"></div>
 
-            </div>
+		</div>
 
-            <center> Envoyez un fichier ou copiez un lien d'une vidéo pour commencer! </center><br>
+		<center> Envoyez un fichier ou copiez un lien d'une vidéo pour commencer! </center><br>
 
+			<div class="success progress" id="bar">
+	  			<div class="progress-meter" style="width: 50%"></div>
+			</div>
 
+	    	<div class="grid-x grid-margin-x">
 
-            <div class="grid-x grid-margin-x">
+	  			<div class="cell" id="txt" style="height:300px;">
+	  				<br>
+	  				<h3><center> Génération des sous-titres </center></h3>
 
-                <div class="cell" id="txt" style="height:600px;">
-                    <br>
-                    <h3><center> Génération des sous-titres </center></h3>
+				</div>
 
+			</div>
 
-                </div>
+			<br>
 
-            </div>
-        </div>
+			<hr>
+			<div id="footer">
+				<center><img src="images/ImgFooter.png">
+				<br>Le retour du Comeback 2</center>
 
+			</div>
 
+		</div>
 
 

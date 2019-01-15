@@ -41,18 +41,23 @@
 			<div class="cell small-3"></div>
 
   			<div class="cell small-2">
-  				<div class="formURL">
-  					<input type="text" id="URL" placeholder="Entrez votre URL" style="width:225px;float: right; border-radius:30px; height:50px;">
-  				</div>
+  				<form id="upload_url" enctype="multipart/form-data" method="get" action="http://localhost:3000/link" target="_blank">
+                    <input name="url" type="text" id="url" placeholder="Entrez votre URL" style="width:225px;float: right; border-radius:30px; height:50px;">
+                    <center><input type="submit" class="butEnvoyer" id="submit_audio" value="Envoyer URL"/></center>
+                </form>
   			</div>
 
   			<div class="cell small-2"></div>
 
   			<div class="cell small-2">
-  				<div class="formMP3">
+  				<form enctype="multipart/form-data" id="upload_form" method="post">
   					<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
 					<label for="file" class="success button" style="width: 225px; font-size:17px; height:50px;">Choose a file</label>
-				</div>
+					<center><input type="submit" class="butEnvoyer" value="Envoyer fichier" id="envFich" onclick="uploadFile()"/></center>
+					<progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+				    <h3 id="status"></h3>
+				    <p id="loaded_n_total"></p>
+				</form>
   			</div>
 
   			<div class="cell small-3"></div>
@@ -61,9 +66,6 @@
 
 		<center> Envoyez un fichier ou copiez un lien d'une vidéo pour commencer! </center><br>
 
-			<div class="success progress" id="bar">
-	  			<div class="progress-meter" style="width: 50%"></div>
-			</div>
 
 	    	<div class="grid-x grid-margin-x">
 

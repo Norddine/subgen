@@ -41,22 +41,22 @@
 			<div class="cell small-3"></div>
 
   			<div class="cell small-2">
-  				<form id="upload_url" enctype="multipart/form-data" method="get" action="http://localhost:3000/link" target="_blank">
+  				<form id="FenvUrl" enctype="multipart/form-data">
                     <input name="url" type="text" id="url" placeholder="Entrez votre URL" style="width:225px;float: right; border-radius:30px; height:50px;">
-                    <center><input type="submit" class="butEnvoyer" id="submit_audio" value="Envoyer URL"/></center>
+                    <center><input class="butEnvoyer" id="envUrl" value="Envoyer URL"/></center>
                 </form>
   			</div>
 
   			<div class="cell small-2"></div>
 
   			<div class="cell small-2">
-  				<form enctype="multipart/form-data" id="upload_form" method="post">
+
+  				<form enctype="multipart/form-data" name="charger">
+
   					<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
 					<label for="file" class="success button" style="width: 225px; font-size:17px; height:50px;">Choose a file</label>
-					<center><input type="submit" class="butEnvoyer" value="Envoyer fichier" id="envFich" onclick="uploadFile()"/></center>
-					<progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
-				    <h3 id="status"></h3>
-				    <p id="loaded_n_total"></p>
+					<center><input class="butEnvoyer" value="Envoyer fichier" id="envFich"/></center>
+
 				</form>
   			</div>
 
@@ -64,7 +64,7 @@
 
 		</div>
 
-		<center> Envoyez un fichier ou copiez un lien d'une vidéo pour commencer! </center><br>
+		<center> Envoyez un fichier ou copiez un lien d'une vidéo pour commencer ! </center><br>
 
 
 	    	<div class="grid-x grid-margin-x">
@@ -88,4 +88,40 @@
 
 		</div>
 
+<script>
+		$('#envUrl').on('click', function() {                                              
+    $.ajax({
+        url: 'localhost:3000/link', // point to server-side PHP script 
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: { "url":$("#url").toString() },                         
+        type: 'GET',
+    });
+   });
 
+		$(document).ready(function() {
+    $('#envFich').on('click', processForm);
+    $file = $('#file');
+
+});
+
+function processForm(e) {
+    e.preventDefault();
+    console.log('processForm');
+
+    var formData = new FormData();
+
+    if($file.val()) formData.append('file', $file.get(0).files[0]);
+
+
+    var request = new XMLHttpRequest();
+    request.open('POST', 'http://localhost:3000/file)');
+    request.send(formData);
+
+    request.onload = function(e) {
+        console.log('Request Status', request.status);
+    };
+
+}
+</script>
